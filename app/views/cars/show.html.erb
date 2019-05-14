@@ -1,2 +1,8 @@
 <h2><%= @car.title %></h2>
 <h5><%= @car.description %></h5>
+
+<%= link_to "Edit", edit_car_path(@car) %>
+<%= link_to "Delete", car_path(@car), 
+                              method: :delete, 
+                              data: { confirm: "Are you sure?" } %>
+<%= link_to "Back", root_path %>

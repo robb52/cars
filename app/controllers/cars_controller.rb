@@ -22,6 +22,22 @@ class CarsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @car.update(car_params)
+      redirect_to car_path(@car)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @car.destroy
+    redirect_to root_path
+  end
+
   private
 
   def car_params
