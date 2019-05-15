@@ -1,5 +1,25 @@
-<% @cars.each do |car| %>
-  <h2><%= link_to car.title, car_path(car) %></h2>
-<% end %>
+<div class="row">
+ 
+  <% @cars.each do |car| %>
 
-<%= link_to "Add Car", new_car_path %>
+    <div class="col-md-3">
+
+      <h2><%= link_to car.title, car_path(car) %></h2>
+
+
+      <div style="width:400px; height:auto">
+        <%= link_to image_tag(car.image, style: "width:100%"), car_path(car) %>
+      </div>
+
+    </div>
+
+  <% end %>
+
+</div>
+
+   
+
+
+
+
+
