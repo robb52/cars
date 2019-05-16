@@ -1,12 +1,21 @@
-<h2><%= @car.title %></h2>
-<h5><%= @car.description %></h5>
+<div class="col-md-6 offset-3">
 
-<div style="width:400px; height:auto">
-  <%= link_to image_tag(@car.image, style: 'width:100%'), root_path %>
+  <div class="flip-container" ontouchstart="this.classList.toggle('hove');">
+    <div class="flipper">
+      <div class="front">
+        <%= link_to image_tag(@car.image, style: 'width:auto'), root_path %>
+      </div>
+
+      <div class="back">
+        <h2><%= @car.title %></h2>
+        <h5><%= link_to @car.description, root_path %></h5>
+        <%= link_to "Edit", edit_car_path(@car), class: "btn btn-sm btn-primary" %>
+        <%= link_to "Delete", car_path(@car), 
+                                method: :delete, 
+                                data: { confirm: "Are you sure?" }, class: "float-right btn btn-sm btn-danger" %>
+      </div>
+
+    </div>
+  </div>
+
 </div>
-
-<%= link_to "Edit", edit_car_path(@car) %>
-<%= link_to "Delete", car_path(@car), 
-                              method: :delete, 
-                              data: { confirm: "Are you sure?" } %>
-<%= link_to "Back", root_path %>

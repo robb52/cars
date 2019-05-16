@@ -13,3 +13,99 @@
  */
 
 @import "bootstrap";
+
+body {
+  background-color: #D9DBDB;
+}
+
+img.show {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+  border-radius: 5px;
+  margin-top: 40px;   
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+ 
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.4s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+img.show:hover, img.show:focus, img.show:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+img {
+  border-radius: 8px;
+  position: relative;
+  margin: 10px auto;
+  height: 300px;
+  width: 400px;
+  z-index: 1;
+}
+
+.flip-container {
+  perspective: 1000px;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  width: auto;
+  height: 350px;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.back {
+  margin-top: 40px;
+  border-radius: 8px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+nav.navbar.navbar-expand-lg {
+  background-color: black;
+  height: 4em;
+  font-size: 1.5em;
+}
+
+.navbar-brand {
+  font-size: 2em;
+}
+div.front {
+  margin-top: 50px;
+}
+
+
