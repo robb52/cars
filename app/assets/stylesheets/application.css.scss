@@ -12,7 +12,10 @@
  *
  */
 
+
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Bangers|Barlow|Fugaz+One');
+@import 'animate';
 
 body {
   background-color: #D9DBDB;
@@ -31,7 +34,6 @@ img.show {
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
- 
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.4s;
   -webkit-transition-property: transform;
@@ -43,6 +45,9 @@ img.show:hover, img.show:focus, img.show:active {
 }
 
 img {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
   border-radius: 8px;
   position: relative;
   margin: 10px auto;
@@ -90,22 +95,98 @@ img {
   margin-top: 40px;
   border-radius: 8px;
   a {
+    font-family: 'Barlow', sans-serif;
     color: black;
     text-decoration: none;
   }
+}
+
+h1,h2 {
+  font-family: 'Bangers', cursive;
+
 }
 
 nav.navbar.navbar-expand-lg {
   background-color: black;
   height: 4em;
   font-size: 1.5em;
+  border-bottom: 2px solid red;
 }
 
 .navbar-brand {
-  font-size: 2em;
+  color: white;
+  font-family: 'Fugaz One', cursive;
+  letter-spacing: -2px;
+  text-shadow: 2px 2px #FF0000;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-animation: bounceIn 1.5s both 1s;
 }
+
+@-webkit-keyframes bounceIn{
+  0% { 
+    transform: scale(0.1); 
+    -webkit-transform: scale(0.1);
+    opacity: 0;
+  } 
+
+  60% { 
+    transform: scale(1.2); 
+    -webkit-transform: scale(1.2);
+    opacity: 1;
+  } 
+
+  100% { 
+    transform: scale(1); 
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes bounceIn{
+  0% { 
+    transform: scale(0.1); 
+    -webkit-transform: scale(0.1);
+    opacity: 0;
+  } 
+
+  60% { 
+    transform: scale(1.2); 
+    -webkit-transform: scale(1.2);
+    opacity: 1;
+  } 
+
+  100% { 
+    transform: scale(1); 
+    -webkit-transform: scale(1);
+  }
+}
+
+.navbar-brand:hover {
+  color: red;
+}
+
 div.front {
   margin-top: 50px;
 }
 
+.new-car {
+  margin-top: 30px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  padding: 1.5em 1.25em;
+}
+
+
+a.add {
+  text-decoration: none;
+  color: white;
+  -webkit-animation: jello;
+  &:hover {
+    color: red;
+  }
+}
 
